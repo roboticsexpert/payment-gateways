@@ -1,0 +1,20 @@
+{
+    "name": "roboticsexpert/payment-gateways",
+    "authors": [
+        {
+            "name": "Mahdi Youseftabar",
+            "email": "roboticsexpert@gmail.com"
+        }
+    ],
+    "require": {
+        "ext-soap": "*"
+    },
+    "minimum-stability": "dev",
+    "autoload": {
+        "classmap": [
+        ],
+        "psr-4": {
+            "Roboticsexpert\\PaymentGateways\\": "packages/roboticsexpert/payment-gateways/src/"
+        }
+    }
+}
