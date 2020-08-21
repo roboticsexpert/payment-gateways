@@ -14,7 +14,7 @@
         "classmap": [
         ],
         "psr-4": {
-            "Roboticsexpert\\PaymentGateways\\": "packages/roboticsexpert/payment-gateways/src/"
+            "Roboticsexpert\\PaymentGateways\\": "src/"
         }
     }
 }
