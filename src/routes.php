@@ -2,7 +2,7 @@
 
 Route::namespace('Roboticsexpert\\PaymentGateways\\Http')->group(function () {
     Route::get('payment-gateways/', 'PaymentGatewayController@index')->name('payment-gateways.index');
-    Route::post('payment-gateways/{id}', 'Roboticsexpert\PaymentGateways\Http\PaymentGatewayController@update')->name('payment-gateways.update');
+    Route::post('payment-gateways/{id}', 'PaymentGatewayController@update')->name('payment-gateways.update');
 
 
     Route::prefix('transactions')->group(function () {
