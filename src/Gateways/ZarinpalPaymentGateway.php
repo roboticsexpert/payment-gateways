@@ -49,7 +49,7 @@ class ZarinpalPaymentGateway implements IGateway
      * @throws \SoapFault
      * @throws \Exception
      */
-    public function request($callbackUrl, int $price, $transactionKey, $description, $email = null, $mobile = null): GatewayRequestAnswer
+    public function request($callbackUrl, int $price, $transactionKey, $description, ?string $email=null, ?string $mobile=null): GatewayRequestAnswer
     {
         $price = $this->normalizePrice($price);
         $options = array(

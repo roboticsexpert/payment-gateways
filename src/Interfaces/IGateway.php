@@ -24,7 +24,7 @@ interface IGateway
      *
      * @return GatewayRequestAnswer
      */
-    public function request($callbackUrl, int $price, $transactionKey, $description, $email, $mobile): GatewayRequestAnswer;
+    public function request($callbackUrl, int $price, string $transactionKey, string $description, ?string $email = null, ?string $mobile = null): GatewayRequestAnswer;
 
     /**
      * @param int $price

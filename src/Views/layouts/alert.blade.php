@@ -1,4 +1,4 @@
-@inject('alertService',"Sibche\Helpers\AlertHelper")
+@inject('alertService',"Roboticsexpert\PaymentGateways\Helpers\AlertHelper")
 
 <div class="alerts" style="position: fixed;z-index:10000;right:0;top: 0;margin-top:85px;margin-right:20px;width: auto;">
     @foreach($alertService->getAlerts() as $alert)

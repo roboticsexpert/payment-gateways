@@ -48,7 +48,7 @@ class MellatPaymentGateway implements IGateway
      * @return GatewayRequestAnswer
      * @throws \Exception
      */
-    public function request($callbackUrl, int $price, $transactionId, $description, $email, $mobile): GatewayRequestAnswer
+    public function request($callbackUrl, int $price, $transactionId, $description, ?string $email=null, ?string $mobile=null): GatewayRequestAnswer
     {
 
         if ($price && $price >= 100 && $transactionId) {

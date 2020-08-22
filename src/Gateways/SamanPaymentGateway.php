@@ -55,7 +55,7 @@ class SamanPaymentGateway implements IGateway
      *
      * @return GatewayRequestAnswer
      */
-    public function request($callbackUrl, int $price, $transactionKey, $description, $email, $mobile): GatewayRequestAnswer
+    public function request($callbackUrl, int $price, $transactionKey, $description, ?string $email=null, ?string $mobile=null): GatewayRequestAnswer
     {
         return new GatewayRequestAnswer(
             [

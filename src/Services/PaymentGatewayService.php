@@ -19,15 +19,6 @@ class PaymentGatewayService
      */
     private array $paymentGatewayInstances;
 
-    /**
-     * @param Transaction $transaction
-     *
-     * @return IGateway
-     */
-    public function getGatewayServiceFromPaymentGateway(PaymentGateway $paymentGateway)
-    {
-        return $this->getGatewayServiceForPaymentGateway($paymentGateway);
-    }
 
     /**
      * PaymentGatewayService constructor.
@@ -43,6 +34,11 @@ class PaymentGatewayService
         $paymentGatewayInstance = $this->getPaymentInstanceByType($paymentGateway->type);
         $paymentGatewayInstance->setConfigs($paymentGateway->information);
         return $paymentGatewayInstance;
+    }
+
+    public function getPaymentGatewayById(int $id)
+    {
+        return PaymentGateway::find($id);
     }
 
     private function getPaymentInstanceByType(string $type)
@@ -69,6 +65,9 @@ class PaymentGatewayService
             }
         }
 
+        if (empty($array)) {
+            throw new \Exception('no payment gateway is active');
+        }
         $key = array_rand($array);
 
         return $array[$key];

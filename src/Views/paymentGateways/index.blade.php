@@ -1,9 +1,6 @@
-<html lang="FA">
+@extends('pg::layouts.app')
 
-<head>
-    <title>Management panel</title>
-</head>
-<body>
+@section('content')
 <div class="container">
     <div class="alert alert-info" role="alert">
         <strong>مفهوم وزن:</strong>
@@ -54,5 +51,4 @@
         </div>
     @endforeach
 </div>
-</body>
-</html>
+@endsection
