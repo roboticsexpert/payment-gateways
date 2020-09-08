@@ -85,7 +85,7 @@ class TransactionService
      */
     public function getPaidTransacionByInvoiceId(int $id)
     {
-        return Transaction::whereNotNull('paid_at')->where('invoice_id' . $id)->first();
+        return Transaction::whereNotNull('paid_at')->where('invoice_id', $id)->first();
     }
 
     /**
