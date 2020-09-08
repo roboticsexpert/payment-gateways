@@ -38,7 +38,7 @@ class TransactionService
 
     public function redirectForPayment(Transaction $transaction, ?string $successCallback = null, ?string $failedCallback = null)
     {
-        return redirect()->route('pg::transactions.pay', ['id' => $transaction->id, 'successCallback' => $successfulCallback, 'failureCallback' => $failedCallback]);
+        return redirect()->route('pg::transactions.pay', ['id' => $transaction->id, 'successCallback' => $successCallback, 'failureCallback' => $failedCallback]);
     }
 
     /**
