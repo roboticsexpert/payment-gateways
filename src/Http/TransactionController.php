@@ -56,12 +56,12 @@ class TransactionController extends Controller
             return redirect()->route('pg::transactions.notAllowed');
         }*/
 
-        $autoInvoicePay = (boolean)$request->input('autoInvoicePay', false);
-
-        if (!$autoInvoicePay && $transaction->invoice_id) {
-            $transaction->invoice_id = null;
-            $transaction->save();
-        }
+//        $autoInvoicePay = (boolean)$request->input('autoInvoicePay', false);
+//
+//        if (!$autoInvoicePay && $transaction->invoice_id) {
+//            $transaction->invoice_id = null;
+//            $transaction->save();
+//        }
 
         $callback = $request->input('callback');
         $successCallback = $request->input('successCallback');
