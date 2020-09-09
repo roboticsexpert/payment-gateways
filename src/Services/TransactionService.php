@@ -44,23 +44,21 @@ class TransactionService
     /**
      * @param int $userId
      * @param int $price
-     * @param null $invoiceId
+     * @param int|null $invoiceId
      * @return Transaction
      */
-    public function create(int $userId, int $price, $invoiceId = null)
+    public function create(int $userId, int $price, ?int $invoiceId = null)
     {
         $transaction = new Transaction();
         $transaction->user_id = $userId;
 
-        if ($invoiceId) {
-            $transaction->invoice_id = $invoiceId;
-        }
+        $transaction->invoice_id = $invoiceId;
+
         $transaction->price = $price;
 
         $transaction->ip = Request::ip();
 
         $paymentGateway = $this->paymentGatewayService->getPaymentGatewayForPayment();
-
 
         $transaction->paymentGateway()->associate($paymentGateway);
 
